@@ -62,17 +62,18 @@ function base64ToBlob(base64Data) {
     }
 }
 
-const fileInput = document.getElementById('fileInput');
-fileInput.addEventListener('change', onConvert)
 
-async function onConvert(){
-    const file = fileInput.files[0];  
+document.getElementById('fileInput').addEventListener('change', onConvertFile);
+document.getElementById('folderInput').addEventListener('change', onConvertFile);
 
+async function onConvertFile(e){
+    const file = e.target.files;  
     if (file) {
         try {
-            base64String = await fileToBase64(file); 
+            let zipfile =  await zipedFile(file)
+            console.log(zipfile)
+            base64String = await fileToBase64(zipfile);
             nameStr = file.name
-
             console.log(base64String.length)
             sendFile(base64String,nameStr)
         } catch (error) {
@@ -81,6 +82,28 @@ async function onConvert(){
     } else {
         alert('Please select a file.');
     }
+}
+
+function zipedFile(file){
+    return new Promise(function(resolve,reject){
+        var zip = new JSZip();
+        let slider = document.getElementById("slider-load")
+        slider.style.width = "0px"
+
+        console.log(file)
+        for (let i = 0; i < file.length; i++) {
+            zip.file(file[i].webkitRelativePath ||file[i].name ,file[i]);
+            slider.style.width = (i/(file.length))*200+"px"
+        }
+        
+        zip.generateAsync({ type: "blob" }).then((blob) => {
+            console.log(blob)
+            slider.style.width = "200px"
+            resolve(blob)
+        });
+        
+    })
+    
 }
 
 //SEND############################

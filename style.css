@@ -17,6 +17,7 @@ body{
 }
 
 
+
 .btn-cont {
     display: flex;
     align-items: center;
@@ -41,17 +42,20 @@ body{
     cursor: pointer;
 }
 .send-sector:hover{
+    flex-direction: column;
     width: 475px;
 }
 .send-sector input {
     display: none;
 }
-.send-sector span {
-
+.select-type{
+    font-size: 0;
+    transition: all 0.5s ease-out;
     cursor: pointer;
 }
-
-
+.send-sector:hover .select-type{
+    font-size: 20px;
+}
 
 .get-sector {
     display: flex;
@@ -101,7 +105,9 @@ body{
 .get-sector label{
     display: none;
 }
-
+.get-sector span{
+    cursor: pointer;
+}
 
 .slider-cont {
     margin: 0 auto;

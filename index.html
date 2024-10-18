@@ -13,10 +13,18 @@
         <div class="btn-cont">
             
             <div class="send-sector">
-                <label for="fileInput">
-                    <span id="codeView">POST</span>
-                    <input type="file" id="fileInput">
-                </label>
+                <span id="codeView">POST</span>
+                <div class="select-type">
+                    <label for="folderInput">
+                        <span class="select-type">Folder</span>
+                        <input type="file" id="folderInput" webkitdirectory directory multiple>
+                    </label>
+                    <label for="fileInput">
+                        <span class="select-type">File</span>
+                        <input type="file" id="fileInput" multiple>
+                    </label>
+                </div>
+                
                  
             </div>
             <div class="get-sector">
@@ -36,6 +44,7 @@
     
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
 <script src="script.js"></script>
 
 </html>
