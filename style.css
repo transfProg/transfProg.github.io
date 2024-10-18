@@ -1,0 +1,115 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Cormorant Garamond"
+}
+
+
+
+.container {
+    text-align: center;
+}
+
+.header{
+    font-size: 40px;
+    margin: 20px auto;
+
+}
+
+
+.btn-cont {
+    display: flex;
+    align-items: center;
+    margin:20px auto;
+    width: 350px;
+    height: 150px;
+    border: 0.3px solid rgb(44, 44, 44);
+    border-radius: 90px;
+
+}
+
+.send-sector{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 175px;
+    height: 110px;
+    border-right: 0.1px solid rgb(44, 44, 44);
+    font-size: 30px;
+    
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+}
+.send-sector:hover{
+    width: 475px;
+}
+.send-sector input {
+    display: none;
+}
+.send-sector span {
+
+    cursor: pointer;
+}
+
+
+
+.get-sector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 175px;
+    height: 110px;
+    border-left: 0.1px solid rgb(44, 44, 44);
+    font-size: 30px;
+
+    transition: all 0.5s ease-out;
+    
+}
+.get-sector input[type=text]{
+    width: 0;
+    font-size: 25px;
+    height: 25px;
+    border: 0.05px solid rgb(44, 44, 44);
+    outline: none;
+    border-radius: 24px;
+    text-align: center;
+
+    transition: all 1s ease-out;
+
+
+}
+.get-sector:hover img{
+    width: 20px;
+}
+.get-sector img{
+    width: 0;
+}
+.get-sector:hover{
+    width: 475px;
+    flex-direction: column;
+    font-size: 25px;
+}
+
+.get-sector:hover input[type=text]{
+    font-family: "Cormorant Garamond";
+    width: 150px;
+    margin: 0 auto;
+}
+.get-sector:hover label{
+    display: block;
+}
+.get-sector label{
+    display: none;
+}
+
+
+.slider-cont {
+    margin: 0 auto;
+    width: 200px;
+}
+.slider-load {
+    
+    border: 0.1px solid rgb(44, 44, 44);
+    width: 0px;
+    transition: all 0.5s ease-out;
+}
